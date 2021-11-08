@@ -1,0 +1,56 @@
+﻿@page
+@model PayrollSystem.Pages.StaffPayment.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Department
+            </th>
+            <th>
+                DatePaid
+            </th>
+            <th>
+               Amount Paid
+            </th>
+            <th>
+               Employee Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+       
+@foreach (var item in Model.Salary) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePaid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountPaid)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeName)
+            </td>
+        <td>
+            <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+            <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+            <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+        </td>
+        </tr>
+}
+    </tbody>
+</table>

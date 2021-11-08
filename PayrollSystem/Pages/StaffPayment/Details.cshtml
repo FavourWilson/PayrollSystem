@@ -1,0 +1,43 @@
+﻿@page
+@model PayrollSystem.Pages.StaffPayment.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Salary</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Salary.EmployeeName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Salary.EmployeeName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Salary.AmountPaid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Salary.AmountPaid)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Salary.Department)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Salary.Department)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Salary.DatePaid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Salary.DatePaid)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Salary.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
